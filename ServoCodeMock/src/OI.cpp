@@ -5,15 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+#include <Commands/BucketMove.h>
 #include "OI.h"
 
 #include "ctre/Phoenix.h"
 #include "WPILib.h"
-#include "Commands/BucketOpen.h"
 
 
 OI::OI(): joy(new Joystick(1)), servoButton(new JoystickButton(joy, 7)) {
 	// Process operator interface input here.
-	servoButton->WhenPressed(new BucketOpen(90)); // opens bucket
-	servoButton->WhenReleased(new BucketOpen(0)); // closes bucket
+	servoButton->WhenPressed(new BucketMove(.5)); // opens bucket
+	servoButton->WhenReleased(new BucketMove(0)); // closes bucket
 }

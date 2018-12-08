@@ -11,11 +11,11 @@
 #include "Subsystems/ServoMech.h"
 
 
-class BucketOpen : public frc::Command {
+class BucketMove : public frc::Command {
 private:
 	double angle;
 public:
-	BucketOpen(double a);
+	BucketMove(double a);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

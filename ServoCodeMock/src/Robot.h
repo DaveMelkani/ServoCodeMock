@@ -40,14 +40,4 @@ private:
 	frc::SendableChooser<frc::Command*> m_chooser;
 };
 
-/*
- *
- *
- *
- *
- * //	MyAutoCommand m_myAuto;
- *
- *
- *
- */
- */
+

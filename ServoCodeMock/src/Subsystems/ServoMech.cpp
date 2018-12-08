@@ -8,8 +8,14 @@
 #include "WPILib.h"
 #include "../RobotMap.h"
 
-ServoMech::ServoMech() : Subsystem("Servo"), purpleServo(new Servo(1)){
+ServoMech::ServoMech() : Subsystem("Servo"), purpleServo(new Servo(0)){
 
+}
+
+ServoMech::~ServoMech()
+{
+	delete purpleServo;
+	purpleServo = nullptr;
 }
 
 void ServoMech::InitDefaultCommand() {
@@ -19,7 +25,7 @@ void ServoMech::InitDefaultCommand() {
 }
 
 void ServoMech::move(double angle){
-	purpleServo->SetAngle(angle);
+	purpleServo->Set(angle);
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
